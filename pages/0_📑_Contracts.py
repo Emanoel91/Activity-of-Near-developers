@@ -175,14 +175,34 @@ with subtab_Daily:
             fig.update_yaxes(title_text='', secondary_y=True)
             st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 	
+	
+	
+# -------------------------------------------------Weekly------------------------------------------------------------------------------------------
+with subtab_Weekly:
+            df = Number_of_Contracts_Deployed_per_Week
+            fig = sp.make_subplots(specs=[[{'secondary_y': True}]])
+            fig.add_trace(go.Bar(x=df['Week'], y=df['Contracts Count'], name='Contracts Count'), secondary_y=False)
+            fig.add_trace(go.Line(x=df['Week'], y=df['Cummulative Contracts Count'], name='Cummulative Contracts Count'), secondary_y=True)
+            fig.update_layout(title_text='Number of Contracts')
+            fig.update_yaxes(title_text='', secondary_y=False)
+            fig.update_yaxes(title_text='', secondary_y=True)
+            st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
                    
 	
 
+# --------------------------------------------------Monthly----------------------------------------------------------------------------------------
+with subtab_Monthly:
+            df = Number_of_Contracts_Deployed_per_Month
+            fig = sp.make_subplots(specs=[[{'secondary_y': True}]])
+            fig.add_trace(go.Bar(x=df['Month'], y=df['Contracts Count'], name='Contracts Count'), secondary_y=False)
+            fig.add_trace(go.Line(x=df['Month'], y=df['Cummulative Contracts Count'], name='Cummulative Contracts Count'), secondary_y=True)
+            fig.update_layout(title_text='Number of Contracts')
+            fig.update_yaxes(title_text='', secondary_y=False)
+            fig.update_yaxes(title_text='', secondary_y=True)
+            st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
 
 
-
-
-
+# --------------------------------------------------Yearly----------------------------------------------------------------------------------------
 
 
