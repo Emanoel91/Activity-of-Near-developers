@@ -164,6 +164,16 @@ Heat_map = get_data('Heat map')
 
 
 subtab_Daily, subtab_Weekly, subtab_Monthly, subtab_Yearly = st.tabs(['Daily', 'Weekly', 'Monthly','Yearly'])
+
+with subtab_Daily:
+            df = Number_of_Contracts_Deployed_per_Day
+            fig = sp.make_subplots(specs=[[{'secondary_y': True}]])
+            fig.add_trace(go.Bar(x=df['Day'], y=df['Contracts Count'], name='Contracts Count'), secondary_y=False)
+            fig.add_trace(go.Line(x=df['Day'], y=df['Cummulative Contracts Count'], name='Cummulative Contracts Count'), secondary_y=True)
+            fig.update_layout(title_text='Number of Contracts')
+            fig.update_yaxes(title_text='', secondary_y=False)
+            fig.update_yaxes(title_text='', secondary_y=True)
+            st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 	
                    
 	
