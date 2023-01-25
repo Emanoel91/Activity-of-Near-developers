@@ -212,7 +212,7 @@ with subtab_Yearly:
             with c1:
                 fig = px.pie(df, values='New Developer', names='Year', title='Share of Developers in Each Year')
                 fig.update_layout(legend_title='Year', legend_y=0.5)
-                fig.update_traces(textinfo='percent+label', textposition='inside')
+                fig.update_traces(textinfo='percent', textposition='inside')
                 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 		
             with c2:
