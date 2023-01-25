@@ -13,7 +13,7 @@ Near = PIL.Image.open('Near.png')
 
 # Structure
 st.set_page_config(page_title='Pull Requests', page_icon=Near, layout='wide')
-st.title('🏢 Pull Requests')
+st.title('🧾 Pull Requests')
 
 # Cover
 c1 , c2 = st.columns(2)
