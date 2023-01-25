@@ -207,6 +207,7 @@ with subtab_Monthly:
 with subtab_Yearly:
 	
                df = Number_of_Contracts_Deployed_per_Year
+	       c1, c2 = st.columns(2)
                with c1:	  
                   fig = px.pie(df, values='Contracts Count', names='Year', title='Share of Contracts in Each Year')
                   fig.update_layout(legend_title='Year', legend_y=0.5)
