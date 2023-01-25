@@ -12,8 +12,8 @@ theme_plotly = None # None or streamlit
 Near = PIL.Image.open('Near.png')
 
 # Structure
-st.set_page_config(page_title='Developers', page_icon=Near, layout='wide')
-st.title('💻 Developers')
+st.set_page_config(page_title='Contracts', page_icon=Near, layout='wide')
+st.title('📑 Contracts')
 
 # Cover
 c1 , c2 = st.columns(2)
