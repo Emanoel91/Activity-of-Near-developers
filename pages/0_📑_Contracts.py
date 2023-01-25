@@ -158,11 +158,13 @@ Top_20_Developers_Based_on_Number_of_Likes = get_data('Top 20 Developers Based o
 Top_20_Developers_Based_on_Number_of_Days_of_Activity = get_data('Top 20 Developers Based on Number of Days of Activity')
 Heat_map = get_data('Heat map')
 
-
+# Analysis
+df = Top_20_Contracts_Based_on_Transactions_Count
+fig = px.bar(df, x='New Contract', y='TXs Count', color='New Contract', title='Top 20 Contracts Based on Transactions Count', log_y=False)
+fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='Contracts Count', xaxis={'categoryorder':'total ascending'})
+st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
 # Contracts Analysis
-
-
 subtab_Daily, subtab_Weekly, subtab_Monthly, subtab_Yearly = st.tabs(['Daily', 'Weekly', 'Monthly','Yearly'])
 
 with subtab_Daily:
