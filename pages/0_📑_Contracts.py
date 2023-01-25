@@ -205,21 +205,20 @@ with subtab_Monthly:
 
 # --------------------------------------------------Yearly----------------------------------------------------------------------------------------
 with subtab_Yearly:
-	
-               df = Number_of_Contracts_Deployed_per_Year
-	       c1, c2 = st.columns(2)
-               with c1:	  
-                  fig = px.pie(df, values='Contracts Count', names='Year', title='Share of Contracts in Each Year')
-                  fig.update_layout(legend_title='Year', legend_y=0.5)
-                  fig.update_traces(textinfo='percent+label', textposition='inside')
-                  st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
-			
-               with c2:         
-                  fig = px.bar(df, x='Year', y='Maximum', color='Year', title='Total Number of Contracts')
-                  fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='')
-                  st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
-
+            df = Number_of_Contracts_Deployed_per_Year
+            c1, c2 = st.columns(2)
+             
+            with c1:
+                fig = px.pie(df, values='Contracts Count', names='Year', title='Share of Contracts in Each Year')
+                fig.update_layout(legend_title='Year', legend_y=0.5)
+                fig.update_traces(textinfo='percent+label', textposition='inside')
+                st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+		
+            with c2:
+                fig = px.bar(df, x='Year', y='Maximum', color='Year', title='Total Number of Contracts')
+                fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='')
+                st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
 
 
