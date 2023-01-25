@@ -216,7 +216,7 @@ with subtab_Yearly:
                 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 		
             with c2:
-                fig = px.bar(df, x='Year', y='Maximum', color='Year', title='Total Number of Contracts')
+                fig = px.bar(df, x='Year', y='Contracts Count', color='Year', title='Total Number of Contracts')
                 fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='')
                 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
