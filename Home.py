@@ -12,7 +12,7 @@ st.title('Activity of NEAR Developers')
 # Content
 c1, c2 = st.columns(2)
 
-#c1.image(Image.open('Images/near2-logo.png'))
+#c1.image(Image.open('Images/COVER.JPG'))
 
 st.subheader('📃 Introduction')
 
