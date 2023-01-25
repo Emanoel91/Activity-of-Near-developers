@@ -161,15 +161,6 @@ Heat_map = get_data('Heat map')
 
 
 # Contracts Analysis
-df = Number_of_Contracts_Deployed_per_Day
-fig = sp.make_subplots(specs=[[{'secondary_y': True}]])
-fig.add_trace(go.Bar(x=df['Date'], y=df['Average Transactions Count per Sender'], name='TX per Sender'), secondary_y=False)
-fig.add_trace(go.Line(x=df['Date'], y=df['Average Transactions Count per Receiver'], name='TX per Receiver'), secondary_y=True)
-fig.update_layout(title_text='Average Transactions Count per User')
-fig.update_yaxes(title_text='', secondary_y=False)
-fig.update_yaxes(title_text='', secondary_y=True)
-st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
-
 
 
 subtab_Daily, subtab_Weekly, subtab_Monthly, subtab_Yearly = st.tabs(['Daily', 'Weekly', 'Monthly','Yearly'])
