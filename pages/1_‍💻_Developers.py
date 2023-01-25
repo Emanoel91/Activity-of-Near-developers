@@ -158,9 +158,21 @@ Top_20_Developers_Based_on_Number_of_Likes = get_data('Top 20 Developers Based o
 Top_20_Developers_Based_on_Number_of_Days_of_Activity = get_data('Top 20 Developers Based on Number of Days of Activity')
 Heat_map = get_data('Heat map')
 
+# Analysis
+df = Top_20_Developers_With_Most_Pull_Created_Requests_Count
+fig = px.bar(df, x='AUTHOR', y='Pull Requests Count', color='AUTHOR', title='Top 20 Developers With Most Pull Created Requests Count', log_y=False)
+fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='PRs Count', xaxis={'categoryorder':'total ascending'})
+st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
+df = Top_20_Developers_With_Most_Closed_Pull_Requests_Count
+fig = px.bar(df, x='AUTHOR', y='Pull Requests Count', color='AUTHOR', title='Top 20 Developers With Most Closed Pull Requests Count', log_y=False)
+fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='PRs Count', xaxis={'categoryorder':'total ascending'})
+st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
-
+df = Top_20_Developers_With_Most_Repositories_Count_Created_Pull_Requests
+fig = px.bar(df, x='AUTHOR', y='Repo Count', color='AUTHOR', title='Top 20 Developers With Most Repositories Count (Created Pull Requests)', log_y=False)
+fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='Repo Count', xaxis={'categoryorder':'total ascending'})
+st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
 # Contracts Analysis
 subtab_Daily, subtab_Weekly, subtab_Monthly, subtab_Yearly = st.tabs(['Daily', 'Weekly', 'Monthly','Yearly'])
