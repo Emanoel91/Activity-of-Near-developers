@@ -159,3 +159,84 @@ Top_20_Developers_Based_on_Number_of_Days_of_Activity = get_data('Top 20 Develop
 Heat_map = get_data('Heat map')
 
 
+
+
+
+# Contracts Analysis
+subtab_Daily, subtab_Weekly, subtab_Monthly, subtab_Yearly = st.tabs(['Daily', 'Weekly', 'Monthly','Yearly'])
+
+with subtab_Daily:
+            df = Number_of_New_Developer_per_Day
+            fig = sp.make_subplots(specs=[[{'secondary_y': True}]])
+            fig.add_trace(go.Bar(x=df['Day'], y=df['New Developer'], name='New Developer'), secondary_y=False)
+            fig.add_trace(go.Line(x=df['Day'], y=df['Cummulative New Developer'], name='Cummulative New Developer'), secondary_y=True)
+            fig.update_layout(title_text='Number of New Developer')
+            fig.update_yaxes(title_text='', secondary_y=False)
+            fig.update_yaxes(title_text='', secondary_y=True)
+            st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+	
+	
+	
+# -------------------------------------------------Weekly------------------------------------------------------------------------------------------
+with subtab_Weekly:
+            df = Number_of_New_Developer_per_Week
+            fig = sp.make_subplots(specs=[[{'secondary_y': True}]])
+            fig.add_trace(go.Bar(x=df['Week'], y=df['New Developer'], name='New Developer'), secondary_y=False)
+            fig.add_trace(go.Line(x=df['Week'], y=df['Cummulative New Developer'], name='Cummulative New Developer'), secondary_y=True)
+            fig.update_layout(title_text='Number of New Developer')
+            fig.update_yaxes(title_text='', secondary_y=False)
+            fig.update_yaxes(title_text='', secondary_y=True)
+            st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+                   
+	
+
+# --------------------------------------------------Monthly----------------------------------------------------------------------------------------
+with subtab_Monthly:
+            df = Number_of_New_Developer_per_Month
+            fig = sp.make_subplots(specs=[[{'secondary_y': True}]])
+            fig.add_trace(go.Bar(x=df['Month'], y=df['New Developer'], name='New Developer'), secondary_y=False)
+            fig.add_trace(go.Line(x=df['Month'], y=df['Cummulative New Developer'], name='Cummulative New Developer'), secondary_y=True)
+            fig.update_layout(title_text='Number of New Developer')
+            fig.update_yaxes(title_text='', secondary_y=False)
+            fig.update_yaxes(title_text='', secondary_y=True)
+            st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+
+
+
+# --------------------------------------------------Yearly----------------------------------------------------------------------------------------
+with subtab_Yearly:
+
+            df = Number_of_New_Developer_per_Year
+            c1, c2 = st.columns(2)
+             
+            with c1:
+                fig = px.pie(df, values='New Developer', names='Year', title='Share of Developers in Each Year')
+                fig.update_layout(legend_title='Year', legend_y=0.5)
+                fig.update_traces(textinfo='percent+label', textposition='inside')
+                st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+		
+            with c2:
+                fig = px.bar(df, x='Year', y='New Developer', color='Year', title='Total Number of Developers', log_y=False)
+                fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='Developers Count', xaxis={'categoryorder':'total ascending'})
+                st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
