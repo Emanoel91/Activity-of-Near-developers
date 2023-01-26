@@ -146,7 +146,7 @@ df = Total_Data
 c1, c2 = st.columns(2)
              
 with c1:
-      st.metric(label='Total Number of Developers', value=df['Total Developer'])
+      st.metric(label='**Total Number of Developers**', value=df['Total Developer'])
 		
 
 
