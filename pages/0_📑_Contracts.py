@@ -101,6 +101,8 @@ def get_data(query1):
               return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/c9e5fc31-b328-4070-a675-8acdb932f12f/data/latest') 
     elif query1 == 'Classification of Contracts Based on TXs Count':
               return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/54b11f56-3207-40f9-9572-183002c21ec8/data/latest') 	
+    elif query1 == 'Total Contracts Count':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/0c390aac-8f53-4774-8ca4-f27fdebeee68/data/latest') 	
     return None
 
 Number_of_New_Developer_per_Day = get_data('Number of New Developer per Day')
@@ -142,8 +144,15 @@ Top_20_Developers_Based_on_Number_of_Likes = get_data('Top 20 Developers Based o
 Top_20_Developers_Based_on_Number_of_Days_of_Activity = get_data('Top 20 Developers Based on Number of Days of Activity')
 Heat_map = get_data('Heat map')
 Classification_of_Contracts_Based_on_TXs_Count = get_data('Classification of Contracts Based on TXs Count')
+Total_Contracts_Count = get_data('Total Contracts Count')
 
 # Analysis
+
+df = Total_Contracts_Count
+c1, c2 = st.columns(2)
+             
+with c1:
+      st.metric(label='**Total Number of Contracts**', value=df['Contracts Count'])
 
 df = Classification_of_Contracts_Based_on_TXs_Count
 c1, c2 = st.columns(2)
