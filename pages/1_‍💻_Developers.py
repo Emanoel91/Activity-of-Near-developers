@@ -159,6 +159,11 @@ Top_20_Developers_Based_on_Number_of_Days_of_Activity = get_data('Top 20 Develop
 Heat_map = get_data('Heat map')
 
 # Analysis
+df = Roles_of_Developers
+fig = px.bar(df, x='Role', y='Developers Count', color='Role', title='Roles of Developers', log_y=False)
+fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='DEVs Count', xaxis={'categoryorder':'total ascending'})
+st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+
 df = Top_20_Developers_With_Most_Pull_Created_Requests_Count
 fig = px.bar(df, x='AUTHOR', y='Pull Requests Count', color='AUTHOR', title='Top 20 Developers With Most Pull Created Requests Count', log_y=False)
 fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='PRs Count', xaxis={'categoryorder':'total ascending'})
