@@ -283,4 +283,37 @@ with subtab_Yearly:
                 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 	
 
+st.subheader('🔎 Observations')
+st.write(
+    """
+- **36% of pull requests have been merged, 31% have been closed and the rest are open.**
+- **Top organizations are:**
 
+**1- Based on the number of developers **
+
+🥇 **near**
+
+🥈 **aurora-is-near**
+
+🥉 **nearprotocol**
+
+**2- Based on the number of repository **
+
+🥇 **near**
+
+🥈 **near-examples**
+
+🥉 **aurora-is-near**
+
+**3- Based on the number of pull requests**
+
+🥇 **near**
+
+🥈 **aurora-is-near**
+
+🥉 **moonlet**
+
+- **The trend of the number of active organizations has been generally upward.**
+- **The number of organizations has changed from 129 to 131 in 2022 compared to 2021. These changes have been very small compared to previous years.**
+    """
+)
