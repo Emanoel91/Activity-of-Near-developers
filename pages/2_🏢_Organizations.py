@@ -98,7 +98,9 @@ def get_data(query1):
     elif query1 == 'Top 20 Developers Based on Number of Days of Activity':
               return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/0b36071c-4760-4adc-927f-bf1849ad1206/data/latest') 
     elif query1 == 'Heat map':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/c9e5fc31-b328-4070-a675-8acdb932f12f/data/latest')        
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/c9e5fc31-b328-4070-a675-8acdb932f12f/data/latest')
+    elif query1 == 'Number of Orgs In Different PRs States':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/9484b327-145e-46a8-beb6-9e2ff8cb8b0f/data/latest')	
     return None
 
 Number_of_New_Developer_per_Day = get_data('Number of New Developer per Day')
@@ -139,8 +141,23 @@ Top_20_Organizations_Based_on_Pull_Request_Count = get_data('Top 20 Organization
 Top_20_Developers_Based_on_Number_of_Likes = get_data('Top 20 Developers Based on Number of Likes')
 Top_20_Developers_Based_on_Number_of_Days_of_Activity = get_data('Top 20 Developers Based on Number of Days of Activity')
 Heat_map = get_data('Heat map')
+Number_of_Orgs_In_Different_PRs_States = get_data('Number of Orgs In Different PRs States')
 
 # analysis
+
+df = Number_of_Orgs_In_Different_PRs_States
+c1, c2 = st.columns(2)
+             
+with c1:
+     fig = px.pie(df, values='Organizations', names='State', title='Share of Organizations In Different Pull Requests States')
+     fig.update_layout(legend_title='State', legend_y=0.5)
+     fig.update_traces(textinfo='percent', textposition='inside')
+     st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+		
+with c2:
+     fig = px.bar(df, x='State', y='Organizations', color='State', title='Total Number of Organizations In Different Pull Requests States', log_y=False)
+     fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='Orgs Count', xaxis={'categoryorder':'total ascending'})
+     st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
 df =Top_20_Organizations_Based_on_Developers_Count
 fig = px.bar(df, x='Organization', y='Developer Count', color='Organization', title='Top 20 Organizations Based on Developers Count', log_y=False)
