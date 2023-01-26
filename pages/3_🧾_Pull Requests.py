@@ -209,5 +209,13 @@ with subtab_Yearly:
                 fig = px.bar(df, x='Year', y='Pull Requests Count', color='Year', title='Total Number of Pull Requests', log_y=False)
                 fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='PRs Count', xaxis={'categoryorder':'total ascending'})
                 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+		
+st.subheader('🔎 Observations')
+st.write(
+    """
+**The trend in the graphs related to the number of pull requests has been strongly upward from 2018 onwards. The number of pull requests has increased from 110 in 
+2018 to 20,613 in 2022.**
+    """
+)		
 
 
