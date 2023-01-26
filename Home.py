@@ -42,7 +42,11 @@ The main goal of the NEAR network is to create an infrastructure for creating a 
 st.subheader('🎯 Purposes of Dashboard')
 st.write(
     """
-111
+We Produced a rich analysis of NEAR developer activity, using metrics and definitions to answer the questions:
+
+- **How many developers are active on NEAR?**
+- **How active are they?**
+- **How this has changed over time?**
     """
 )
 
