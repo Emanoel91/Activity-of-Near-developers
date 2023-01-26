@@ -292,7 +292,7 @@ with subtab_Yearly:
 with subtab_Yearly:
 
             df = Roles_of_Developers_per_Year
-            fig = px.bar(df, x='Year', y='Developers Count', color='Role', title='Roles of Developers per Year', log_y=False)
+            fig = px.bar(df, x='Year', y='Developers Count', color='Role', title='Roles of Developers per Year', log_y=False, barmode='group')
             fig.update_layout(showlegend=True, xaxis_title=None, legend_title='Role', yaxis_title='DEVs Count', xaxis={'categoryorder':'total ascending'})
             st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)		
 
