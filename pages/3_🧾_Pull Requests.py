@@ -115,3 +115,68 @@ Monthly_Transaction_Fees_of_Top_TX_Signers = get_data('Monthly Transaction Fees 
 Time_interval_between_the_first_and_last_transaction = get_data('Time interval between the first and last transaction')
 Distribution_of_the_number_of_activity_days = get_data('Distribution of the number of activity days')
 Max_Avg_Median_Min_Transaction_Fees = get_data('Max/Avg/Median/Min Transaction Fees')
+
+# Analysis
+
+df = Heat_map
+fig = px.density_heatmap(df, x='Hour', y='Day Name', z='Developer Count', histfunc='avg', title='Developers Count Heat map, Days of Week vs. Hours of Day', nbinsx=24)
+fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title=None, xaxis={'dtick': 1}, yaxis={'dtick': 1}, coloraxis_colorbar=dict(title='DEVs Count'))
+fig.update_yaxes(categoryorder='array', categoryarray=Heat_map)
+st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+
+# Contracts Analysis
+subtab_Daily, subtab_Weekly, subtab_Monthly, subtab_Yearly = st.tabs(['Daily', 'Weekly', 'Monthly','Yearly'])
+
+with subtab_Daily:
+	
+            df = Number_of_Active_Developer_per_Day
+            fig = sp.make_subplots(specs=[[{'secondary_y': True}]])
+            fig.add_trace(go.Bar(x=df['Day'], y=df['Pull Requests Count'], name='Pull Requests Count'), secondary_y=False)
+            fig.add_trace(go.Line(x=df['Day'], y=df['Cummulative Pull Requests Count'], name='Cummulative Pull Requests Count'), secondary_y=True)
+            fig.update_layout(title_text='Number of Pull Requests(PRs)')
+            fig.update_yaxes(title_text='', secondary_y=False)
+            fig.update_yaxes(title_text='', secondary_y=True)
+            st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)	
+	
+# -------------------------------------------------Weekly------------------------------------------------------------------------------------------
+with subtab_Weekly:
+            df = Number_of_Active_Developer_per_Week
+            fig = sp.make_subplots(specs=[[{'secondary_y': True}]])
+            fig.add_trace(go.Bar(x=df['Week'], y=df['Pull Requests Count'], name='Pull Requests Count'), secondary_y=False)
+            fig.add_trace(go.Line(x=df['Week'], y=df['Cummulative Pull Requests Count'], name='Cummulative Pull Requests Count'), secondary_y=True)
+            fig.update_layout(title_text='Number of Pull Requests(PRs)')
+            fig.update_yaxes(title_text='', secondary_y=False)
+            fig.update_yaxes(title_text='', secondary_y=True)
+            st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+                   
+	
+
+# --------------------------------------------------Monthly----------------------------------------------------------------------------------------
+with subtab_Monthly:
+            df = Number_of_Active_Developer_per_Month
+            fig = sp.make_subplots(specs=[[{'secondary_y': True}]])
+            fig.add_trace(go.Bar(x=df['Month'], y=df['Pull Requests Count'], name='Pull Requests Count'), secondary_y=False)
+            fig.add_trace(go.Line(x=df['Month'], y=df['Cummulative Pull Requests Count'], name='Cummulative Pull Requests Count'), secondary_y=True)
+            fig.update_layout(title_text='Number of Pull Requests(PRs)')
+            fig.update_yaxes(title_text='', secondary_y=False)
+            fig.update_yaxes(title_text='', secondary_y=True)
+            st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+
+# --------------------------------------------------Yearly----------------------------------------------------------------------------------------
+with subtab_Yearly:
+
+            df = Number_of_New_Developer_per_Year
+            c1, c2 = st.columns(2)
+             
+            with c1:
+                fig = px.pie(df, values='Pull Requests Count', names='Year', title='Share of Pull Requests in Each Year')
+                fig.update_layout(legend_title='Year', legend_y=0.5)
+                fig.update_traces(textinfo='percent', textposition='inside')
+                st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+		
+            with c2:
+                fig = px.bar(df, x='Year', y='Pull Requests Count', color='Year', title='Total Number of Pull Requests', log_y=False)
+                fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='PRs Count', xaxis={'categoryorder':'total ascending'})
+                st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+
+
