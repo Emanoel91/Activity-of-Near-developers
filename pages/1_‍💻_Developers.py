@@ -141,6 +141,15 @@ Top_20_Developers_Based_on_Number_of_Days_of_Activity = get_data('Top 20 Develop
 Heat_map = get_data('Heat map')
 
 # Analysis
+
+df = Total_Data
+c1, c2 = st.columns(2)
+             
+with c1:
+      st.metric(label='Total Number of Developers', value=df['Total Developer'])
+		
+
+
 df = Roles_of_Developers
 fig = px.bar(df, x='Role', y='Developers Count', color='Role', title='Roles of Developers', log_y=False)
 fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='DEVs Count', xaxis={'categoryorder':'total ascending'})
