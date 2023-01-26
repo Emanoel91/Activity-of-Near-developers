@@ -41,77 +41,239 @@ with open('style.css')as f:
 # flipside API
 @st.cache(ttl=600)
 def get_data(query1):
-    if query1 == 'Transactions Overview':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/5954ddc8-9cdf-47cc-b4cb-a67a0d05f75b/data/latest')
-    elif query1 == 'Daily Transactions Data':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/28aad408-cba3-4560-9235-7a5026a5cd1b/data/latest')
-    elif query1 == 'Status of Transactions':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/accec9ec-512b-4a63-9170-80b37e53e242/data/latest') 
-    elif query1 == 'Statistical Data: Number of Transactions':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/e31e9f16-3294-4104-8514-bc071c400c0d/data/latest')
-    elif query1 == 'Top 20 TX Signers Base on Transactions Count':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/99663018-9ec2-4e00-a827-3078fcaa7761/data/latest')
-    elif query1 == 'Top 20 TX Receivers Base on Transactions Count':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/a6ff61aa-4d96-4c53-912f-9c922e7926e7/data/latest')
-    elif query1 == 'Transaction Fees':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/b688e249-b644-4040-8059-d8c7cea2d258/data/latest')
-    elif query1 == 'Total/Average Transactions Fee':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/9c150e27-bdf1-440c-bc44-244d2a7851b5/data/latest')
-    elif query1 == 'Top 20 TX Signers Based on Paid Fees':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/7f93109f-26e2-4472-b1b7-933920522958/data/latest')
-    elif query1 == 'Statistical Data: Daily Transaction Fees':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/8ee9bda4-fdbb-4e85-a2fb-1b472131d536/data/latest')
-    elif query1 == 'Classification of Blocks Based on TX Count':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/b72f2b79-46fc-40db-8a64-1738ad8a2ada/data/latest')
-    elif query1 == 'Block Maximum Transaction Count':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/d1b7ffcf-4b80-42cc-9d39-4978b8fb032a/data/latest')
-    elif query1 == 'Distribution of Transactions Between Blocks':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/ab4ef9d7-5dac-44c9-9c4c-401a73e5b087/data/latest')
-    elif query1 == 'Classification of Transactions Based on TX Signers':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/951de34b-673e-47dd-a85f-0e1b65bd5569/data/latest')
-    elif query1 == 'Number of New Addresses':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/ef7b7b14-4bff-4ce7-a39d-a719d90f6726/data/latest')
-    elif query1 == 'Transactions Hitmap: Day of Week':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/d97d664d-92e3-41ef-9791-025c8fc6ee79/data/latest')
-    elif query1 == 'Total Transactions Count Over Days of Week':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/446128c4-fd51-413a-9a5a-c7712dedc5e2/data/latest')
-    elif query1 == 'Total Transactions Count Over Hours of Day':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/3d42455d-a0e6-40e6-81b7-bc27ce1a6661/data/latest')
-    elif query1 == 'Monthly Transactions Count of Top TX Signers':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/e8a73aa1-98cc-4575-9815-ce37d26dbe6f/data/latest')
-    elif query1 == 'Monthly Transactions Count of Top TX Receivers':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/e77292ca-6973-4ace-a7a9-313057508618/data/latest')
-    elif query1 == 'Monthly Transaction Fees of Top TX Signers':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/f9474172-0568-4605-a0f6-571ed3b20b9c/data/latest')
-    elif query1 == 'Time interval between the first and last transaction':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/5ebca19e-d680-4cd7-8fcf-6958ab206e09/data/latest')
-    elif query1 == 'Distribution of the number of activity days':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/974f933f-18f2-4e70-bf3e-0c9320776524/data/latest')
-    elif query1 == 'Max/Avg/Median/Min Transaction Fees':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/f571f0fc-9187-402e-85e0-f4b73dd52ac3/data/latest')
+    if query1 == 'Number of New Developer per Day':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/502eba85-a8cf-4681-89be-2397fa9ce8b3/data/latest')
+    elif query1 == 'Number of New Developer per Week':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/110442b4-272d-4489-96b5-ed3a5224a42c/data/latest')
+    elif query1 == 'Number of New Developer per Month':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/35ba9930-7e7b-41f2-9efe-f451cc331c82/data/latest') 
+    elif query1 == 'Number of New Developer per Year':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/0844772f-3428-4715-b163-d5bb5d6cd78e/data/latest')
+    elif query1 == 'Number of Active Developer per Day':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/d188cbec-f8e0-407b-bcd2-89faa51c28d6/data/latest')
+    elif query1 == 'Number of Active Developer per Week':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/5b11e61e-d96c-496a-9a2a-7b28384abfb3/data/latest')
+    elif query1 == 'Number of Active Developer per Month':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/67dcbe9a-d1c1-4b29-8512-0ebcb3b32345/data/latest') 
+    elif query1 == 'Number of Active Developer per Year':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/081cc634-ffaf-4521-9cd9-394e21e8c367/data/latest')
+    elif query1 == 'Number of New Repositories per Day':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/f5aafb62-5657-41e5-be37-3af3dd37b708/data/latest')
+    elif query1 == 'Number of New Repositories per Week':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/2c0817fa-b9b7-48f8-a5cd-1d6ea00bac21/data/latest')
+    elif query1 == 'Number of New Repositories per Month':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/8fd9b62a-9056-4af1-93e2-cf24069c7b75/data/latest') 
+    elif query1 == 'Number of New Repositories per Year':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/a561e309-97e7-4270-b46d-cdeb9c43eca5/data/latest')
+    elif query1 == 'Total Data':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/4c17a043-73b2-4030-9c5e-97139094b2db/data/latest')
+    elif query1 == 'Top 20 Repositories With Most Pull Requests Count':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/6a25d90b-3ead-4220-b6c6-2900e0fd08cd/data/latest')
+    elif query1 == 'Top 20 Developers With Most Pull Created Requests Count':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/553672ed-d532-4903-a700-913b1e2a4776/data/latest') 
+    elif query1 == 'Top 20 Developers With Most Repositories Count (Created Pull Requests)':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/5d4d58dd-d2e3-4dab-9500-01badb0609fe/data/latest')
+    elif query1 == 'Top 20 Developers With Most Closed Pull Requests Count':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/3b598335-9a2e-4b3f-ab47-4919d26e73ec/data/latest')         
+    elif query1 == 'Top 20 Developers With Most Repositories Count (Closed Pull Requests)':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/cb0ba4a3-752d-464f-a87c-9534c630266b/data/latest')
+    elif query1 == 'Roles of Developers':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/963490f4-6fad-4645-9512-615eda781f36/data/latest') 
+    elif query1 == 'Roles of Developers per Day':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/fc80cc01-b473-4a7d-a2fc-0a909f484b19/data/latest')
+    elif query1 == 'Roles of Developers per Week':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/e99e8ee0-ce98-4feb-9207-48134c7a0219/data/latest')
+    elif query1 == 'Roles of Developers per Month':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/481f5d2d-b358-4ea9-8e44-05f7ba40b10c/data/latest')
+    elif query1 == 'Roles of Developers per Year':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/093e1ac2-e55c-48f7-9066-dbea564df0cd/data/latest') 
+    elif query1 == 'Number of Contracts Deployed per Day':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/f8941f5e-aa5f-455b-a7f0-01c7b8b503b1/data/latest')
+    elif query1 == 'Number of Contracts Deployed per Week':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/c30661e0-cc58-4c2d-a6fe-e010343ad419/data/latest')
+    elif query1 == 'Number of Contracts Deployed per Month':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/4f9070e5-7bda-4b26-8596-a112821580b8/data/latest')
+    elif query1 == 'Number of Contracts Deployed per Year':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/f35c7101-2cec-405b-b513-190a4e97c378/data/latest') 
+    elif query1 == 'Top 20 Contracts Based on Transactions Count':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/14befc79-dab5-495a-94d3-be4178ece0a1/data/latest')
+    elif query1 == 'Number of New Organization per Day':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/2fc4513b-8405-4c26-8dc8-bd4d33646175/data/latest')
+    elif query1 == 'Number of New Organization per Week':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/3190efda-8350-439d-90fa-66268d21a0fd/data/latest')
+    elif query1 == 'Number of New Organization per Month':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/7dcd799c-9789-44b2-9021-c4f7530a83da/data/latest') 
+    elif query1 == 'Number of New Organization per Year':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/41e12485-490a-474b-a6bf-7b3e34f9b4c5/data/latest')
+    elif query1 == 'Top 20 Organizations Based on Developers Count':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/61f031e0-a0e8-46e1-a617-4022939549b8/data/latest') 
+    elif query1 == 'Top 20 Organizations Based on Repository Count':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/f908024c-e016-49c7-8469-09291457a36b/data/latest')
+    elif query1 == 'Top 20 Organizations Based on Pull Request Count':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/00bbd2e3-4a8c-4c15-bfe3-b54a09700bfe/data/latest')
+    elif query1 == 'Top 20 Developers Based on Number of Likes':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/f8369bfe-a6a0-493e-bf7e-2b686b71fd70/data/latest')
+    elif query1 == 'Top 20 Developers Based on Number of Days of Activity':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/0b36071c-4760-4adc-927f-bf1849ad1206/data/latest') 
+    elif query1 == 'Heat map':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/c9e5fc31-b328-4070-a675-8acdb932f12f/data/latest')        
     return None
 
-transactions_overview = get_data('Transactions Overview')
-Daily_Transactions_Data = get_data('Daily Transactions Data')
-Status_of_Transactions = get_data('Status of Transactions')
-Statistical_Data_Number_of_Transactions = get_data('Statistical Data: Number of Transactions')
-Top_20_TX_Signers_Base_on_Transactions_Count = get_data('Top 20 TX Signers Base on Transactions Count')
-Top_20_TX_Receivers_Base_on_Transactions_Count = get_data('Top 20 TX Receivers Base on Transactions Count')
-Transaction_Fees = get_data('Transaction Fees')
-Total_Average_Transactions_Fee = get_data('Total/Average Transactions Fee')
-Top_20_TX_Signers_Based_on_Paid_Fees = get_data('Top 20 TX Signers Based on Paid Fees')
-Statistical_Data_Daily_Transaction_Fees = get_data('Statistical Data: Daily Transaction Fees')
-Classification_of_Blocks_Based_on_TX_Count = get_data('Classification of Blocks Based on TX Count')
-Block_with_Maximum_Transaction_Count = get_data ('Block Maximum Transaction Count')
-Distribution_of_Transactions_Between_Blocks = get_data('Distribution of Transactions Between Blocks')
-Classification_of_Transactions_Based_on_TX_Signers = get_data('Classification of Transactions Based on TX Signers')
-Number_of_New_Addresses = get_data('Number of New Addresses')
-Transactions_Hitmap_Day_of_Week = get_data('Transactions Hitmap: Day of Week')
-Total_Transactions_Count_Over_Days_of_Week = get_data('Total Transactions Count Over Days of Week')
-Total_Transactions_Count_Over_Hours_of_Day = get_data('Total Transactions Count Over Hours of Day')
-Monthly_Transactions_Count_of_Top_TX_Signers = get_data('Monthly Transactions Count of Top TX Signers')
-Monthly_Transactions_Count_of_Top_TX_Receivers = get_data('Monthly Transactions Count of Top TX Receivers')
-Monthly_Transaction_Fees_of_Top_TX_Signers = get_data('Monthly Transaction Fees of Top TX Signers')
-Time_interval_between_the_first_and_last_transaction = get_data('Time interval between the first and last transaction')
-Distribution_of_the_number_of_activity_days = get_data('Distribution of the number of activity days')
-Max_Avg_Median_Min_Transaction_Fees = get_data('Max/Avg/Median/Min Transaction Fees')
+Number_of_New_Developer_per_Day = get_data('Number of New Developer per Day')
+Number_of_New_Developer_per_Week = get_data('Number of New Developer per Week')
+Number_of_New_Developer_per_Month = get_data('Number of New Developer per Month')
+Number_of_New_Developer_per_Year = get_data('Number of New Developer per Year')
+Number_of_Active_Developer_per_Day = get_data('Number of Active Developer per Day')
+Number_of_Active_Developer_per_Week = get_data('Number of Active Developer per Week')
+Number_of_Active_Developer_per_Month = get_data('Number of Active Developer per Month')
+Number_of_Active_Developer_per_Year = get_data('Number of Active Developer per Year')
+Number_of_New_Repositories_per_Day = get_data('Number of New Repositories per Day')
+Number_of_New_Repositories_per_Week = get_data('Number of New Repositories per Week')
+Number_of_New_Repositories_per_Month = get_data('Number of New Repositories per Month')
+Number_of_New_Repositories_per_Year = get_data('Number of New Repositories per Year')
+Total_Data = get_data('Total Data')
+Top_20_Repositories_With_Most_Pull_Requests_Count = get_data('Top 20 Repositories With Most Pull Requests Count ')
+Top_20_Developers_With_Most_Pull_Created_Requests_Count = get_data('Top 20 Developers With Most Pull Created Requests Count')
+Top_20_Developers_With_Most_Repositories_Count_Created_Pull_Requests = get_data('Top 20 Developers With Most Repositories Count (Created Pull Requests)')
+Top_20_Developers_With_Most_Closed_Pull_Requests_Count = get_data('Top 20 Developers With Most Closed Pull Requests Count')
+Top_20_Developers_With_Most_Repositories_Count_Closed_Pull_Requests = get_data('Top 20 Developers With Most Repositories Count (Closed Pull Requests)')
+Roles_of_Developers = get_data('Roles of Developers')
+Roles_of_Developers_per_Day = get_data('Roles of Developers per Day')
+Roles_of_Developers_per_Week = get_data('Roles of Developers per Week')
+Roles_of_Developers_per_Month = get_data('Roles of Developers per Month')
+Roles_of_Developers_per_Year = get_data('Roles of Developers per Year')
+Number_of_Contracts_Deployed_per_Day = get_data('Number of Contracts Deployed per Day')
+Number_of_Contracts_Deployed_per_Week = get_data('Number of Contracts Deployed per Week')
+Number_of_Contracts_Deployed_per_Month = get_data('Number of Contracts Deployed per Month')
+Number_of_Contracts_Deployed_per_Year = get_data('Number of Contracts Deployed per Year')
+Top_20_Contracts_Based_on_Transactions_Count = get_data('Top 20 Contracts Based on Transactions Count')
+Number_of_New_Organization_per_Day = get_data('Number of New Organization per Day')
+Number_of_New_Organization_per_Week = get_data('Number of New Organization per Week')
+Number_of_New_Organization_per_Month = get_data('Number of New Organization per Month')
+Number_of_New_Organization_per_Year = get_data('Number of New Organization per Year')
+Top_20_Organizations_Based_on_Developers_Count = get_data('Top 20 Organizations Based on Developers Count')
+Top_20_Organizations_Based_on_Repository_Count = get_data('Top 20 Organizations Based on Repository Count')
+Top_20_Organizations_Based_on_Pull_Request_Count = get_data('Top 20 Organizations Based on Pull Request Count')
+Top_20_Developers_Based_on_Number_of_Likes = get_data('Top 20 Developers Based on Number of Likes')
+Top_20_Developers_Based_on_Number_of_Days_of_Activity = get_data('Top 20 Developers Based on Number of Days of Activity')
+Heat_map = get_data('Heat map')
+
+
+# Contracts Analysis
+subtab_Daily, subtab_Weekly, subtab_Monthly, subtab_Yearly = st.tabs(['Daily', 'Weekly', 'Monthly','Yearly'])
+
+with subtab_Daily:
+            df = Number_of_New_Organization_per_Day
+            fig = sp.make_subplots(specs=[[{'secondary_y': True}]])
+            fig.add_trace(go.Bar(x=df['Day'], y=df['New Organization'], name='New Organization'), secondary_y=False)
+            fig.add_trace(go.Line(x=df['Day'], y=df['Cummulative New Organization'], name='Cummulative New Organization'), secondary_y=True)
+            fig.update_layout(title_text='Number of New Organizations')
+            fig.update_yaxes(title_text='', secondary_y=False)
+            fig.update_yaxes(title_text='', secondary_y=True)
+            st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+	
+            df = Number_of_Active_Developer_per_Day
+            fig = sp.make_subplots(specs=[[{'secondary_y': True}]])
+            fig.add_trace(go.Bar(x=df['Day'], y=df['Active Developer'], name='Active Developer'), secondary_y=False)
+            fig.add_trace(go.Line(x=df['Day'], y=df['Cummulative Active Developer'], name='Cummulative Active Developer'), secondary_y=True)
+            fig.update_layout(title_text='Number of Active Developer')
+            fig.update_yaxes(title_text='', secondary_y=False)
+            fig.update_yaxes(title_text='', secondary_y=True)
+            st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)	
+	
+            df = Roles_of_Developers_per_Day
+            fig = px.bar(df, x='Day', y='Developers Count', color='Role', title='Roles of Developers per Day', log_y=False)
+            fig.update_layout(showlegend=True, xaxis_title=None, legend_title='Role', yaxis_title='DEVs Count', xaxis={'categoryorder':'total ascending'})
+            st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)	
+	
+# -------------------------------------------------Weekly------------------------------------------------------------------------------------------
+with subtab_Weekly:
+            df = Number_of_New_Organization_per_Week
+            fig = sp.make_subplots(specs=[[{'secondary_y': True}]])
+            fig.add_trace(go.Bar(x=df['Week'], y=df['New Organization'], name='New Organization'), secondary_y=False)
+            fig.add_trace(go.Line(x=df['Week'], y=df['Cummulative New Organization'], name='Cummulative New Organization'), secondary_y=True)
+            fig.update_layout(title_text='Number of New Organizations')
+            fig.update_yaxes(title_text='', secondary_y=False)
+            fig.update_yaxes(title_text='', secondary_y=True)
+            st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+                   
+            df = Number_of_Active_Developer_per_Week
+            fig = sp.make_subplots(specs=[[{'secondary_y': True}]])
+            fig.add_trace(go.Bar(x=df['Week'], y=df['Active Developer'], name='Active Developer'), secondary_y=False)
+            fig.add_trace(go.Line(x=df['Week'], y=df['Cummulative Active Developer'], name='Cummulative Active Developer'), secondary_y=True)
+            fig.update_layout(title_text='Number of Active Developer')
+            fig.update_yaxes(title_text='', secondary_y=False)
+            fig.update_yaxes(title_text='', secondary_y=True)
+            st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+		
+            df = Roles_of_Developers_per_Week
+            fig = px.bar(df, x='Week', y='Developers Count', color='Role', title='Roles of Developers per Week', log_y=False)
+            fig.update_layout(showlegend=True, xaxis_title=None, legend_title='Role', yaxis_title='DEVs Count', xaxis={'categoryorder':'total ascending'})
+            st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)		
+
+# --------------------------------------------------Monthly----------------------------------------------------------------------------------------
+with subtab_Monthly:
+            df = Number_of_New_Organization_per_Month
+            fig = sp.make_subplots(specs=[[{'secondary_y': True}]])
+            fig.add_trace(go.Bar(x=df['Month'], y=df['New Organization'], name='New Organization'), secondary_y=False)
+            fig.add_trace(go.Line(x=df['Month'], y=df['Cummulative New Organization'], name='Cummulative New Organization'), secondary_y=True)
+            fig.update_layout(title_text='Number of New Organizations')
+            fig.update_yaxes(title_text='', secondary_y=False)
+            fig.update_yaxes(title_text='', secondary_y=True)
+            st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+
+            df = Number_of_Active_Developer_per_Month
+            fig = sp.make_subplots(specs=[[{'secondary_y': True}]])
+            fig.add_trace(go.Bar(x=df['Month'], y=df['Active Developer'], name='Active Developer'), secondary_y=False)
+            fig.add_trace(go.Line(x=df['Month'], y=df['Cummulative Active Developer'], name='Cummulative Active Developer'), secondary_y=True)
+            fig.update_layout(title_text='Number of Active Developer')
+            fig.update_yaxes(title_text='', secondary_y=False)
+            fig.update_yaxes(title_text='', secondary_y=True)
+            st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+	
+            df = Roles_of_Developers_per_Month
+            fig = px.bar(df, x='Month', y='Developers Count', color='Role', title='Roles of Developers per Month', log_y=False)
+            fig.update_layout(showlegend=True, xaxis_title=None, legend_title='Role', yaxis_title='DEVs Count', xaxis={'categoryorder':'total ascending'})
+            st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)	
+
+# --------------------------------------------------Yearly----------------------------------------------------------------------------------------
+with subtab_Yearly:
+
+            df = Number_of_New_Organization_per_Year
+            c1, c2 = st.columns(2)
+             
+            with c1:
+                fig = px.pie(df, values='New Organization', names='Year', title='Share of New Organizations in Each Year')
+                fig.update_layout(legend_title='Year', legend_y=0.5)
+                fig.update_traces(textinfo='percent', textposition='inside')
+                st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+		
+            with c2:
+                fig = px.bar(df, x='Year', y='New Organization', color='Year', title='Total Number of New Organizations', log_y=False)
+                fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='Organizations Count', xaxis={'categoryorder':'total ascending'})
+                st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+
+with subtab_Yearly:
+
+            df = Number_of_Active_Developer_per_Year
+            c1, c2 = st.columns(2)
+             
+            with c1:
+                fig = px.pie(df, values='Active Developer', names='Year', title='Share of Active Developers in Each Year')
+                fig.update_layout(legend_title='Year', legend_y=0.5)
+                fig.update_traces(textinfo='percent', textposition='inside')
+                st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+		
+            with c2:
+                fig = px.bar(df, x='Year', y='Active Developer', color='Year', title='Total Number of Active Developers', log_y=False)
+                fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='Developers Count', xaxis={'categoryorder':'total ascending'})
+                st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+
+with subtab_Yearly:
+
+            df = Roles_of_Developers_per_Year
+            fig = px.bar(df, x='Year', y='Developers Count', color='Role', title='Roles of Developers per Year', log_y=False, barmode='group')
+            fig.update_layout(showlegend=True, xaxis_title=None, legend_title='Role', yaxis_title='DEVs Count', xaxis={'categoryorder':'total ascending'})
+            st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)		
+
+
