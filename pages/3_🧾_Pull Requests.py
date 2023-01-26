@@ -143,6 +143,12 @@ Heat_map = get_data('Heat map')
 
 # Analysis
 
+df = Total_Data
+c1, c2 = st.columns(2)
+             
+with c1:
+      st.metric(label='**Total Number of Pull Requestس**', value=df['Pull Request Count'])
+
 df = Heat_map
 fig = px.density_heatmap(df, x='Hour', y='Day Name', z='Developer Count', histfunc='avg', title='Pull Requests(PRs) Count Heat map, Days of Week vs. Hours of Day', nbinsx=24)
 fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title=None, xaxis={'dtick': 1}, yaxis={'dtick': 1}, coloraxis_colorbar=dict(title='DEVs Count'))
