@@ -156,7 +156,7 @@ fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_tit
 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
 df = Top_20_Developers_With_Most_Pull_Created_Requests_Count
-fig = px.bar(df, x='AUTHOR', y='Pull Requests Count', color='AUTHOR', title='Top 20 Developers With Most Pull Created Requests Count', log_y=False)
+fig = px.bar(df, x='AUTHOR', y='Pull Requests Count', color='AUTHOR', title='Top 20 Developers With Most Created Pull Requests Count', log_y=False)
 fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='PRs Count', xaxis={'categoryorder':'total ascending'})
 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
