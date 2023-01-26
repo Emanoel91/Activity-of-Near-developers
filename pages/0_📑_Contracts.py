@@ -116,7 +116,9 @@ def get_data(query1):
     elif query1 == 'Top 20 Developers Based on Number of Days of Activity':
               return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/0b36071c-4760-4adc-927f-bf1849ad1206/data/latest') 
     elif query1 == 'Heat map':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/c9e5fc31-b328-4070-a675-8acdb932f12f/data/latest')        
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/c9e5fc31-b328-4070-a675-8acdb932f12f/data/latest') 
+    elif query1 == 'Classification of Contracts Based on TXs Count':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/54b11f56-3207-40f9-9572-183002c21ec8/data/latest') 	
     return None
 
 Number_of_New_Developer_per_Day = get_data('Number of New Developer per Day')
@@ -157,6 +159,7 @@ Top_20_Organizations_Based_on_Pull_Request_Count = get_data('Top 20 Organization
 Top_20_Developers_Based_on_Number_of_Likes = get_data('Top 20 Developers Based on Number of Likes')
 Top_20_Developers_Based_on_Number_of_Days_of_Activity = get_data('Top 20 Developers Based on Number of Days of Activity')
 Heat_map = get_data('Heat map')
+Classification_of_Contracts_Based_on_TXs_Count = get_data('Classification of Contracts Based on TXs Count')
 
 # Analysis
 
