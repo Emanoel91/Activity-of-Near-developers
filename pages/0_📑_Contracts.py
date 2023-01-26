@@ -159,6 +159,21 @@ Top_20_Developers_Based_on_Number_of_Days_of_Activity = get_data('Top 20 Develop
 Heat_map = get_data('Heat map')
 
 # Analysis
+
+df = Classification_of_Contracts_Based_on_TXs_Count
+c1, c2 = st.columns(2)
+             
+with c1:
+     fig = px.pie(df, values='Number of Contracts', names='Group', title='Classification of Contracts Based on TXs Count')
+     fig.update_layout(legend_title='Group', legend_y=0.5)
+     fig.update_traces(textinfo='percent', textposition='inside')
+     st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+		
+with c2:
+     fig = px.bar(df, x='Group', y='Number of Contracts', color='Group', title='', log_y=False)
+     fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='Contracts Count', xaxis={'categoryorder':'total ascending'})
+     st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+
 df = Top_20_Contracts_Based_on_Transactions_Count
 fig = px.bar(df, x='New Contract', y='TXs Count', color='New Contract', title='Top 20 Contracts Based on Transactions Count', log_y=False)
 fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='TXs Count', xaxis={'categoryorder':'total ascending'})
