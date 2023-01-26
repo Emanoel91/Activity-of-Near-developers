@@ -304,7 +304,31 @@ with subtab_Yearly:
             st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)		
 
 
+st.subheader('🔎 Observations')
+st.write(
+    """
+- **So far 2481 developers are active in the NEAR chain. Of which 897 Contributor exists.**
+- **The top developers are:**
+🥇 **Top developer with most created pull requests count 👉 bowenwang1996**
+🥈 **Top developer with most closed pull requests count 👉 bowenwang1996**
+🥉 **Top developer with most repositories count 👉 mikedotexe**
+🏅 **Best developer based on the number of likes 👉 birchmd**
+🎖 **The most active developer based on the number of days of activity 👉 bowenwang1996**
 
+- **The number of active developers is high in the middle of the week and their number decreases on the weekends. On the other hand, at 14:00 on Tuesdays, there are the largest number of developers.**
+- **The highest number of developers is related to August 27, 2021.**
+- **The percentage of changes in the number of new developers each year is:**
+🔘 **2018 > 2019: +790%**
+🔘 **2019 > 2020 : +287%**
+🔘 **2020 > 2021 : 95%**
+🔘 **2021 > 2022: +68%**
+- **The percentage of changes in the number of active developers in each year is:**
+🔘 **2018 > 2019 : +881%**
+🔘 **2019 > 2020 : +303%**
+🔘 **2020 > 2021 : 94%**
+🔘 **2021 > 2022: +78%**
+    """
+)
 
 
 
