@@ -297,7 +297,7 @@ st.write(
 
 🥉 **nearprotocol**
 
-**Based on the number of repository **
+**Based on the number of repository**
 
 🥇 **near**
 
