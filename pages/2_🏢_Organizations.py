@@ -144,6 +144,12 @@ Heat_map = get_data('Heat map')
 Number_of_Orgs_In_Different_PRs_States = get_data('Number of Orgs In Different PRs States')
 
 # analysis
+df = Total_Data
+c1, c2 = st.columns(2)
+             
+with c1:
+      st.metric(label='**Total Number of Organizations**', value=df['Total ORG'])
+
 
 df = Number_of_Orgs_In_Different_PRs_States
 c1, c2 = st.columns(2)
