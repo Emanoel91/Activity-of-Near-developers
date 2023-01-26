@@ -289,7 +289,7 @@ st.write(
 - **36% of pull requests have been merged, 31% have been closed and the rest are open.**
 - **Top organizations are:**
 
-**Based on the number of developers **
+**Based on the number of developers**
 
 🥇 **near**
 
