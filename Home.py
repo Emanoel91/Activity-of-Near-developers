@@ -25,7 +25,7 @@ Today, if someone wants to use a simple application or game launched on the bloc
 
 The main goal of the NEAR network is to create an infrastructure for creating a new Internet. In the new internet, it will be harder for big companies to access people's personal information. Countries cannot ban some programs and destroy people's business in this system. A world of freedom where everyone can act freely. Of course, this goal of the Near network is not a new concept; In fact, Satoshi Nakamoto also pursued the same goal by introducing Bitcoin in 2008. But Bitcoin has created this freedom only in the financial sphere. But like many other networks, Near seeks to expand this freedom to other aspects of human life.
 
-👌 **Near protocol features**
+👌  **Near protocol features**
 
 1️⃣ The speed of transactions in Near network is high and the transaction fees are low. The reason for this is that Near protocol uses sharding technology.
 
@@ -50,10 +50,21 @@ We Produced a rich analysis of NEAR developer activity, using metrics and defini
     """
 )
 
-st.subheader('📖 Guidance')
+st.subheader('📖 Vocabulary')
 st.write(
     """
-111
+⚫ **GitHub**
+
+GitHub is a code hosting platform for version control and collaboration. It lets users work together on projects from anywhere.
+
+⚫ **Repository**
+
+A repository contains all of users project's files and each file's revision history. users can discuss and manage their project's work within the repository.
+
+⚫ **Pull requests**
+
+Pull requests let users tell others about changes they've pushed to a branch in a repository on GitHub. Once a pull request is opened, users can discuss and review the
+potential changes with collaborators and add follow-up commits before their changes are merged into the base branch.
     """
 )
 
