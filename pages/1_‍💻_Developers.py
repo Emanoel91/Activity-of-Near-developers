@@ -202,7 +202,7 @@ with subtab_Daily:
             st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)	
 	
             df = Roles_of_Developers_per_Day
-            fig = px.bar(df, x='Day', y='Developers Count', color='Role', title='Roles of Developers per Day', log_y=False)
+            fig = px.area(df, x='Day', y='Developers Count', color='Role', title='Roles of Developers per Day', log_y=False)
             fig.update_layout(showlegend=True, xaxis_title=None, legend_title='Role', yaxis_title='DEVs Count', xaxis={'categoryorder':'total ascending'})
             st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)	
 	
