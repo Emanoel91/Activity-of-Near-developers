@@ -143,11 +143,12 @@ Top_20_Developers_Based_on_Number_of_Days_of_Activity = get_data('Top 20 Develop
 Heat_map = get_data('Heat map')
 Number_of_Repos_In_Different_PRs_States = get_data('Number of Repos In Different PRs States')
 
+
 df = Total_Data
 c1, c2 = st.columns(2)
              
 with c1:
-      st.metric(label='**Total Number of Repositories**', value=df['Repository Count'])
+      st.metric(label='**Total Number of Repositories**', value=df['Total Repo'])
 
 df = Number_of_Repos_In_Different_PRs_States
 c1, c2 = st.columns(2)
