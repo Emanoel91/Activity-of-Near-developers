@@ -158,6 +158,30 @@ Top_20_Developers_Based_on_Number_of_Likes = get_data('Top 20 Developers Based o
 Top_20_Developers_Based_on_Number_of_Days_of_Activity = get_data('Top 20 Developers Based on Number of Days of Activity')
 Heat_map = get_data('Heat map')
 
+# analysis
+
+df =Top_20_Organizations_Based_on_Developers_Count
+fig = px.bar(df, x='Organization', y='Developer Count', color='Organization', title='Top 20 Organizations Based on Developers Count', log_y=False)
+fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='DEVs Count', xaxis={'categoryorder':'total ascending'})
+st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+
+df = Top_20_Organizations_Based_on_Repository_Count
+fig = px.bar(df, x='Organization', y='Repository Count', color='Organization', title='Top 20 Organizations Based on Repository Count', log_y=False)
+fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='Repo Count', xaxis={'categoryorder':'total ascending'})
+st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+
+df = Top_20_Organizations_Based_on_Pull_Request_Count
+fig = px.bar(df, x='Organization', y='Pull Requests Count', color='Organization', title='Top 20 Organizations Based on Pull Request_Count', log_y=False)
+fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='PRs Count', xaxis={'categoryorder':'total ascending'})
+st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+
+df = Heat_map
+fig = px.density_heatmap(df, x='Hour', y='Day Name', z='Developer Count', histfunc='avg', title='Developers Count Heat map, Days of Week vs. Hours of Day', nbinsx=24)
+fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title=None, xaxis={'dtick': 1}, yaxis={'dtick': 1}, coloraxis_colorbar=dict(title='DEVs Count'))
+fig.update_yaxes(categoryorder='array', categoryarray=Heat_map)
+st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+
+
 
 # Contracts Analysis
 subtab_Daily, subtab_Weekly, subtab_Monthly, subtab_Yearly = st.tabs(['Daily', 'Weekly', 'Monthly','Yearly'])
