@@ -231,14 +231,16 @@ with subtab_Yearly:
                 fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='Contracts Count', xaxis={'categoryorder':'total ascending'})
                 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
-st.subheader('📖 Observations')
+st.subheader('🔎 Observations')
 st.write(
     """
 - Most contracts have between 10 and 100 transactions.
 - The least number of contracts have registered only one transaction.
 - The three contracts with the highest number of transactions are:
 1- token.sweat 👉 20.8M TXs
+
 2- tge.lockup.sweat 👉 4.4M TXs
+
 3- v2.nearapps.near 👉 3.5M TXs
 - On some days, we see a significant growth in the number of active contracts.
 - The maximum number of active contracts has been registered on June 7, 2022.
