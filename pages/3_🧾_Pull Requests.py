@@ -162,7 +162,7 @@ Heat_map = get_data('Heat map')
 # Analysis
 
 df = Heat_map
-fig = px.density_heatmap(df, x='Hour', y='Day Name', z='Developer Count', histfunc='avg', title='Developers Count Heat map, Days of Week vs. Hours of Day', nbinsx=24)
+fig = px.density_heatmap(df, x='Hour', y='Day Name', z='Developer Count', histfunc='avg', title='Pull Requests(PRs) Count Heat map, Days of Week vs. Hours of Day', nbinsx=24)
 fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title=None, xaxis={'dtick': 1}, yaxis={'dtick': 1}, coloraxis_colorbar=dict(title='DEVs Count'))
 fig.update_yaxes(categoryorder='array', categoryarray=Heat_map)
 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
