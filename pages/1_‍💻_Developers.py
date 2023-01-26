@@ -201,6 +201,11 @@ with subtab_Daily:
             fig.update_yaxes(title_text='', secondary_y=True)
             st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)	
 	
+            df = Roles_of_Developers_per_Day
+            fig = px.bar(df, x='Day', y='Developers Count', color='Role', title='Roles of Developers per Day', log_y=False)
+            fig.update_layout(showlegend=True, xaxis_title=None, legend_title='Role', yaxis_title='DEVs Count', xaxis={'categoryorder':'total ascending'})
+            st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)	
+	
 # -------------------------------------------------Weekly------------------------------------------------------------------------------------------
 with subtab_Weekly:
             df = Number_of_New_Developer_per_Week
@@ -219,7 +224,12 @@ with subtab_Weekly:
             fig.update_layout(title_text='Number of Active Developer')
             fig.update_yaxes(title_text='', secondary_y=False)
             fig.update_yaxes(title_text='', secondary_y=True)
-            st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)	
+            st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+		
+            df = Roles_of_Developers_per_Week
+            fig = px.bar(df, x='Week', y='Developers Count', color='Role', title='Roles of Developers per Week', log_y=False)
+            fig.update_layout(showlegend=True, xaxis_title=None, legend_title='Role', yaxis_title='DEVs Count', xaxis={'categoryorder':'total ascending'})
+            st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)		
 
 # --------------------------------------------------Monthly----------------------------------------------------------------------------------------
 with subtab_Monthly:
@@ -240,6 +250,11 @@ with subtab_Monthly:
             fig.update_yaxes(title_text='', secondary_y=False)
             fig.update_yaxes(title_text='', secondary_y=True)
             st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+	
+            df = Roles_of_Developers_per_Month
+            fig = px.bar(df, x='Month', y='Developers Count', color='Role', title='Roles of Developers per Month', log_y=False)
+            fig.update_layout(showlegend=True, xaxis_title=None, legend_title='Role', yaxis_title='DEVs Count', xaxis={'categoryorder':'total ascending'})
+            st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)	
 
 # --------------------------------------------------Yearly----------------------------------------------------------------------------------------
 with subtab_Yearly:
@@ -274,6 +289,12 @@ with subtab_Yearly:
                 fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='Developers Count', xaxis={'categoryorder':'total ascending'})
                 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
+with subtab_Yearly:
+
+            df = Roles_of_Developers_per_Year
+            fig = px.bar(df, x='Year', y='Developers Count', color='Role', title='Roles of Developers per Year', log_y=False)
+            fig.update_layout(showlegend=True, xaxis_title=None, legend_title='Role', yaxis_title='DEVs Count', xaxis={'categoryorder':'total ascending'})
+            st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)		
 
 
 
