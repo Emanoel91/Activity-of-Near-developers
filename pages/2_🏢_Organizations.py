@@ -289,7 +289,7 @@ st.write(
 - **36% of pull requests have been merged, 31% have been closed and the rest are open.**
 - **Top organizations are:**
 
-**1- Based on the number of developers **
+**Based on the number of developers **
 
 🥇 **near**
 
@@ -297,7 +297,7 @@ st.write(
 
 🥉 **nearprotocol**
 
-**2- Based on the number of repository **
+**Based on the number of repository **
 
 🥇 **near**
 
@@ -305,7 +305,7 @@ st.write(
 
 🥉 **aurora-is-near**
 
-**3- Based on the number of pull requests**
+**Based on the number of pull requests**
 
 🥇 **near**
 
