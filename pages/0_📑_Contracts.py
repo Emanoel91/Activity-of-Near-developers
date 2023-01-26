@@ -237,11 +237,11 @@ st.write(
 - Most contracts have between 10 and 100 transactions.
 - The least number of contracts have registered only one transaction.
 - The three contracts with the highest number of transactions are:
-1- token.sweat 👉 20.8M TXs
+🥇 token.sweat 👉 20.8M TXs
 
-2- tge.lockup.sweat 👉 4.4M TXs
+🥈 tge.lockup.sweat 👉 4.4M TXs
 
-3- v2.nearapps.near 👉 3.5M TXs
+🥉 v2.nearapps.near 👉 3.5M TXs
 - On some days, we see a significant growth in the number of active contracts.
 - The maximum number of active contracts has been registered on June 7, 2022.
 - In 2021, the number of contracts has been increasing every month.
