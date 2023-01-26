@@ -208,7 +208,7 @@ with subtab_Monthly:
 # --------------------------------------------------Yearly----------------------------------------------------------------------------------------
 with subtab_Yearly:
 
-            df = Number_of_New_Developer_per_Year
+            df = Number_of_Active_Developer_per_Year
             c1, c2 = st.columns(2)
              
             with c1:
