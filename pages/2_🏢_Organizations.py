@@ -174,17 +174,14 @@ with subtab_Daily:
 	
             df = Number_of_Active_Developer_per_Day
             fig = sp.make_subplots(specs=[[{'secondary_y': True}]])
-            fig.add_trace(go.Bar(x=df['Day'], y=df['Active Developer'], name='Active Developer'), secondary_y=False)
-            fig.add_trace(go.Line(x=df['Day'], y=df['Cummulative Active Developer'], name='Cummulative Active Developer'), secondary_y=True)
-            fig.update_layout(title_text='Number of Active Developer')
+            fig.add_trace(go.Bar(x=df['Day'], y=df['Organizations Count'], name='Organizations Count'), secondary_y=False)
+            fig.add_trace(go.Line(x=df['Day'], y=df['Cummulative Organizations Count'], name='Cummulative Organizations Count'), secondary_y=True)
+            fig.update_layout(title_text='Number of Active Organizations')
             fig.update_yaxes(title_text='', secondary_y=False)
             fig.update_yaxes(title_text='', secondary_y=True)
             st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)	
 	
-            df = Roles_of_Developers_per_Day
-            fig = px.bar(df, x='Day', y='Developers Count', color='Role', title='Roles of Developers per Day', log_y=False)
-            fig.update_layout(showlegend=True, xaxis_title=None, legend_title='Role', yaxis_title='DEVs Count', xaxis={'categoryorder':'total ascending'})
-            st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)	
+	
 	
 # -------------------------------------------------Weekly------------------------------------------------------------------------------------------
 with subtab_Weekly:
@@ -199,17 +196,14 @@ with subtab_Weekly:
                    
             df = Number_of_Active_Developer_per_Week
             fig = sp.make_subplots(specs=[[{'secondary_y': True}]])
-            fig.add_trace(go.Bar(x=df['Week'], y=df['Active Developer'], name='Active Developer'), secondary_y=False)
-            fig.add_trace(go.Line(x=df['Week'], y=df['Cummulative Active Developer'], name='Cummulative Active Developer'), secondary_y=True)
-            fig.update_layout(title_text='Number of Active Developer')
+            fig.add_trace(go.Bar(x=df['Week'], y=df['Organizations Count'], name='Organizations Count'), secondary_y=False)
+            fig.add_trace(go.Line(x=df['Week'], y=df['Cummulative Organizations Count'], name='Cummulative Organizations Count'), secondary_y=True)
+            fig.update_layout(title_text='Number of Active Organizations')
             fig.update_yaxes(title_text='', secondary_y=False)
             fig.update_yaxes(title_text='', secondary_y=True)
-            st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+            st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)	
 		
-            df = Roles_of_Developers_per_Week
-            fig = px.bar(df, x='Week', y='Developers Count', color='Role', title='Roles of Developers per Week', log_y=False)
-            fig.update_layout(showlegend=True, xaxis_title=None, legend_title='Role', yaxis_title='DEVs Count', xaxis={'categoryorder':'total ascending'})
-            st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)		
+	
 
 # --------------------------------------------------Monthly----------------------------------------------------------------------------------------
 with subtab_Monthly:
@@ -224,17 +218,14 @@ with subtab_Monthly:
 
             df = Number_of_Active_Developer_per_Month
             fig = sp.make_subplots(specs=[[{'secondary_y': True}]])
-            fig.add_trace(go.Bar(x=df['Month'], y=df['Active Developer'], name='Active Developer'), secondary_y=False)
-            fig.add_trace(go.Line(x=df['Month'], y=df['Cummulative Active Developer'], name='Cummulative Active Developer'), secondary_y=True)
-            fig.update_layout(title_text='Number of Active Developer')
+            fig.add_trace(go.Bar(x=df['Month'], y=df['Organizations Count'], name='Organizations Count'), secondary_y=False)
+            fig.add_trace(go.Line(x=df['Month'], y=df['Cummulative Organizations Count'], name='Cummulative Organizations Count'), secondary_y=True)
+            fig.update_layout(title_text='Number of Active Organizations')
             fig.update_yaxes(title_text='', secondary_y=False)
             fig.update_yaxes(title_text='', secondary_y=True)
-            st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
-	
-            df = Roles_of_Developers_per_Month
-            fig = px.bar(df, x='Month', y='Developers Count', color='Role', title='Roles of Developers per Month', log_y=False)
-            fig.update_layout(showlegend=True, xaxis_title=None, legend_title='Role', yaxis_title='DEVs Count', xaxis={'categoryorder':'total ascending'})
             st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)	
+	
+
 
 # --------------------------------------------------Yearly----------------------------------------------------------------------------------------
 with subtab_Yearly:
@@ -259,21 +250,15 @@ with subtab_Yearly:
             c1, c2 = st.columns(2)
              
             with c1:
-                fig = px.pie(df, values='Active Developer', names='Year', title='Share of Active Developers in Each Year')
+                fig = px.pie(df, values='Organizations Count', names='Year', title='Share of Active Organizations in Each Year')
                 fig.update_layout(legend_title='Year', legend_y=0.5)
                 fig.update_traces(textinfo='percent', textposition='inside')
                 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 		
             with c2:
-                fig = px.bar(df, x='Year', y='Active Developer', color='Year', title='Total Number of Active Developers', log_y=False)
-                fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='Developers Count', xaxis={'categoryorder':'total ascending'})
+                fig = px.bar(df, x='Year', y='Organizations Count', color='Year', title='Total Number of Active Organizations', log_y=False)
+                fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='Organizations Count', xaxis={'categoryorder':'total ascending'})
                 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
-
-with subtab_Yearly:
-
-            df = Roles_of_Developers_per_Year
-            fig = px.bar(df, x='Year', y='Developers Count', color='Role', title='Roles of Developers per Year', log_y=False, barmode='group')
-            fig.update_layout(showlegend=True, xaxis_title=None, legend_title='Role', yaxis_title='DEVs Count', xaxis={'categoryorder':'total ascending'})
-            st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)		
+	
 
 
