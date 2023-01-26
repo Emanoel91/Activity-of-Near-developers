@@ -152,7 +152,7 @@ with c1:
      fig.update_traces(textinfo='percent', textposition='inside')
      st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 		
- with c2:
+with c2:
      fig = px.bar(df, x='State', y='Repos', color='State', title='Total Number of Repositories In Different Pull Requests States', log_y=False)
      fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='Repo Count', xaxis={'categoryorder':'total ascending'})
      st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
