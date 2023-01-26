@@ -179,6 +179,16 @@ fig = px.bar(df, x='AUTHOR', y='Repo Count', color='AUTHOR', title='Top 20 Devel
 fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='Repo Count', xaxis={'categoryorder':'total ascending'})
 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
+df = Top_20_Developers_Based_on_Number_of_Likes
+fig = px.bar(df, x='Developer', y='Total likes', color='Developer', title='Top 20 Developers Based on Number of Likes', log_y=False)
+fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='Likes Count', xaxis={'categoryorder':'total ascending'})
+st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+
+df = Top_20_Developers_Based_on_Number_of_Days_of_Activity
+fig = px.bar(df, x='Developer', y='Days Active', color='Developer', title='Top 20 Developers Based on Number of Days of Activity', log_y=False)
+fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='Days Count', xaxis={'categoryorder':'total ascending'})
+st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+
 # Contracts Analysis
 subtab_Daily, subtab_Weekly, subtab_Monthly, subtab_Yearly = st.tabs(['Daily', 'Weekly', 'Monthly','Yearly'])
 
