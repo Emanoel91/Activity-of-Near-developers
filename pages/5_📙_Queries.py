@@ -21,5 +21,5 @@ with open('style.css')as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html = True)
     
     
-st.info('In this dashboard, Flipside database is used to extract data. The list of all the queries used in this dashboard is available in the following links. You can click on the links to access each one.')    
+st.info('🟢 In this dashboard, Flipsidecrypto database is used to extract data. The list of all the queries used in this dashboard is available in the following links. You can click on the links to access each one.')    
 
