@@ -12,11 +12,14 @@ theme_plotly = None # None or streamlit
 Near = PIL.Image.open('Near.png')
 
 # Structure
-st.set_page_config(page_title='Repository', page_icon=Near, layout='wide')
-st.title('💼 Repository')
+st.set_page_config(page_title='Queries', page_icon=Near, layout='wide')
+st.title('📙 Queries')
 
 
 # dash_style
 with open('style.css')as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html = True)
+    
+    
+st.info('In this dashboard, Flipside database is used to extract data. The list of all the queries used in this dashboard is available in the following links. You can click on the links to access each one.')    
 
