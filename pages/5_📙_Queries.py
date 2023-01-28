@@ -25,7 +25,7 @@ st.info('🟢 In this dashboard, Flipsidecrypto database is used to extract data
 
 st.write(
    """
- Project link on GitHub: [Click here](https://github.com/Emanoel91/L2Chains)      
+ Project link on GitHub: [Click here](https://github.com/Emanoel91/Activity-of-Near-developers)      
    """
   )
 c1, c2, c3 = st.columns(3)
